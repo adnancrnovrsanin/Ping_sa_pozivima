@@ -23,6 +23,18 @@ const Video = (props: Props) => {
     console.log("localStream", localStreamUrl);
     console.log("remoteStream", remoteStreamUrl);
 
+    // Once the call is connected we will display 
+    // local Stream on top of remote stream
+    if (localStreamUrl && remoteStreamUrl) {
+        return (
+            <View style={styles.container}>
+                <RTCView streamURL={remoteStreamUrl} objectFit={'cover'} style={styles.video} />
+                <RTCView streamURL={localStreamUrl} objectFit={'cover'} style={styles.videoLocal} />
+                <ButtonContainer hangup={props.hangup} />
+            </View>
+        );
+    }
+
     // On call we will just display the local stream
     if (localStreamUrl && !remoteStreamUrl) {
         console.log("localStreamUrl inside: ", localStreamUrl);
@@ -37,17 +49,7 @@ const Video = (props: Props) => {
             </View>
         );
     }
-    // Once the call is connected we will display 
-    // local Stream on top of remote stream
-    if (localStreamUrl && remoteStreamUrl) {
-        return (
-            <View style={styles.container}>
-                <RTCView streamURL={remoteStreamUrl} objectFit={'cover'} style={styles.video} />
-                <RTCView streamURL={localStreamUrl} objectFit={'cover'} style={styles.videoLocal} />
-                <ButtonContainer hangup={props.hangup} />
-            </View>
-        );
-    }
+    
     return <ButtonContainer hangup={props.hangup} />;
 };
 

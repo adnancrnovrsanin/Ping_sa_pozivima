@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "ping",
-    "slug": "ping",
+    "name": "Ping",
+    "slug": "Ping",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/pingIcon.png",
@@ -35,17 +35,14 @@
       ],
       "package": "com.adnan.ping"
     },
-    "plugins": [
-      "@react-native-firebase/app"
-    ],
     "web": {
       "favicon": "./assets/favicon.png"
     },
+    "owner": "adnan2001",
     "extra": {
       "eas": {
-        "projectId": "0b51909b-e5ef-4c4a-b8a8-6b3e56c15937"
+        "projectId": "a621d9fb-a8d1-4308-a710-4fdf37291b0b"
       }
-    },
-    "owner": "adnan2001"
+    }
   }
 }

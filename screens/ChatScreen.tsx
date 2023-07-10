@@ -207,7 +207,7 @@ const ChatScreen = (props: any) => {
                                     title="Video Call"
                                     iconName="videocam"
                                     color="white"
-                                    onPress={props?.create}
+                                    onPress={() => props?.create()}
                                 />
                             )
                         }

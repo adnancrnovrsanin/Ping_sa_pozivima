@@ -1,6 +1,7 @@
 import { Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Button from './Button';
+import colors from '../constants/colors';
 
 interface Props {
     hangup?: () => void;
@@ -10,10 +11,10 @@ interface Props {
 export default function GettingCall(props: Props) {
   return (
     <View style={styles.container}>
-        <Image source={require('../assets/images/gettingCall.jpg')} style={styles.image} />
+        <Text style={styles.text}>You are getting a call...</Text>
         <View style={styles.bContainer}>
-            <Button onPress={props.hangup} iconName="phone-slash" backgroundColor="#FF0000" style={{ marginRight: 30 }} />
-            <Button onPress={props.join} iconName="phone" backgroundColor="#00FF00" style={{ marginLeft: 30 }} />
+            <Button onPress={props.join} iconName="phone" backgroundColor="#00FF00" style={{ marginRight: 30 }} />
+            <Button onPress={props.hangup} iconName="phone-slash" backgroundColor="#FF0000" style={{ marginLeft: 30 }} />
         </View>
     </View>
   )
@@ -24,14 +25,18 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "flex-end",
         alignItems: "center",
-    },
-    image: {
-        position: "absolute",
-        width: "100%",
-        height: "100%",
+        backgroundColor: colors.pink
     },
     bContainer: {
+        width: "75%",
         flexDirection: "row",
+        justifyContent: "space-between",
         bottom: 30
+    },
+    text: {
+        fontSize: 30,
+        color: "white",
+        marginBottom: 30,
+        bottom: 500
     }
 })

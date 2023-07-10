@@ -221,10 +221,10 @@ const MainNavigator = (props: any) => {
                 pc.current.setLocalDescription(offer);
 
                 const cWithOffer = {
-                offer: {
-                    type: offer.type,
-                    sdp: offer.sdp
-                }
+                    offer: {
+                        type: offer.type,
+                        sdp: offer.sdp
+                    }
                 };
         
                 cRef.set(cWithOffer);
